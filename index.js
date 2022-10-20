@@ -1,38 +1,46 @@
-let initialPrompt = require("./src/js/questions");
-let {prompt} = require("inquirer");
-const {viewAllDepartments, viewAllRoles, viewAllEmployees, addsDepartment, addsRole, addsEmployee, updatesEmployeeRole, exit} = require("./src/js/answers");
+const {optionsPrompt} = require('./src/prompts');
+const {
+  viewDepartments,
+  viewRoles,
+  viewEmployees,
+  addDepartment,
+  addRole,
+  addEmployee,
+  updateEmployeeRole
+} = require('./src/userChoices');
 
+async function init() {
+  const userChoice = await optionsPrompt();
 
-const init = async () => {
-    while (true) {
-        let {trackerOptions} = await prompt(initialPrompt);
+  switch (userChoice.choice) {
+    case 'View all departments':
+      await viewDepartments();
+      break;
+    case 'View all roles':
+      await viewRoles();
+      break;
+    case 'View all employees':
+      await viewEmployees();
+      break;
+    case 'Add a department':
+      await addDepartment();
+      break;
+    case 'Add a role':
+      await addRole();
+      break;
+    case 'Add an employee':
+      await addEmployee();
+      break;
+    case 'Update an employee role':
+      await updateEmployeeRole();
+      break;
+    // Default option is to exit program
+    default:
+      console.log('Exiting silver_db database!');
+      return process.exit();
+  };
 
-        if (trackerOptions === "View all departments") {
-            await viewAllDepartments();
-        }
-        else if (trackerOptions === "View all roles") {
-            await viewAllRoles();
-        }
-        else if (trackerOptions === "View all employees") {
-            await viewAllEmployees();
-        }
-        else if (trackerOptions === "Add a department") {
-            await addsDepartment();
-        }
-        else if (trackerOptions === "Add a role") {
-            await addsRole();
-        }
-        else if (trackerOptions === "Add an employee") {
-            await addsEmployee();
-        }
-        else if (trackerOptions === "Update an employee role") {
-            await updatesEmployeeRole();
-        }
-        else {
-            let decision = await exit();
-            if (decision) process.exit();
-            init();
-        }
-    }
-} 
+  return init();
+}
+
 init();
