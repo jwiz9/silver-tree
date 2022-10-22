@@ -1,7 +1,7 @@
 
   # silver-tree
   ## Description
-  This is a employee-tracker app that allows anyone to track information about employees according to their full name, department, job title, salary, and their manager
+  This is a employee-tracker app that allows anyone to track information about employees according to their full name, department, job title, salary, and their manager.
   ## License
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
