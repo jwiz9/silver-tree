@@ -18,7 +18,7 @@ This application is distributed under the [MIT](https://opensource.org/licenses/
   
   https://drive.google.com/file/d/1R2I2Wl2HX-sPwtPVLsTCbrvTvD9QLgov/view
   ## Installation
-  In order to run this application you need to have node.js installed. Then you need to npm install dependencies: console.table, dotenv, inquirer, and mysql2. In order to run this app you also need to chance .env.EXAMPLE to .env and insert your mysql2 password. Then you need to mysql -uroot -p, insert your password, source db/schema.sql and quit. Then you should be able to node index to run the application and choose the prompts you wish to use or view.
+  In order to run this application you need to have node.js installed. Then you need to npm install dependencies: console.table, dotenv, inquirer, and mysql2. In order to run this app you also need to change .env.EXAMPLE to .env and insert your mysql2 password. Then you need to mysql -uroot -p, insert your password, source db/schema.sql and quit. Then you should be able to node index to run the application and choose the prompts you wish to use or view.
   ## Tests
   N/A
   ## Contributors
